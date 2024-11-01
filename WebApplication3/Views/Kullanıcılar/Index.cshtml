@@ -1,0 +1,44 @@
+﻿@model List<WebApplication3.Areas.Identity.Data.AppUser>
+
+	<h2>Kullanıcılar</h2>
+
+
+
+
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>UserID</th>
+				<th>Username</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Number</th>
+				<th>Gender</th>
+				<th>Birthday</th>
+				<th>Rol</th>
+			
+			</tr>
+
+
+		</thead>
+		<tbody>
+			@foreach(var user in Model)
+			{
+			<tr>
+				<td>@user.Id</td>
+				<td>@user.UserName</td>
+				<td>@user.Firstname</td>
+				<td>@user.Lastname</td>
+				<td>@user.Number</td>
+				<td>@user.Gender</td>
+				<td>@user.Birthday</td>
+				<td>@user.Rol</td>
+			</tr>
+		}
+		</tbody>
+
+
+
+
+
+	</table>

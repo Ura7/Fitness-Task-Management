@@ -1,0 +1,65 @@
+﻿@model WebApplication3.Models.MusteriProgress
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Bilgilerinizi Giriniz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" value="@ViewBag.userid"class="form-control" readonly />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Kilo" class="control-label"></label>
+                <input asp-for="Kilo" class="form-control" />
+                <span asp-validation-for="Kilo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boy" class="control-label"></label>
+                <input asp-for="Boy" class="form-control" />
+                <span asp-validation-for="Boy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YagOrani" class="control-label"></label>
+                <input asp-for="YagOrani" class="form-control" />
+                <span asp-validation-for="YagOrani" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KasKutlesi" class="control-label"></label>
+                <input asp-for="KasKutlesi" class="form-control" />
+                <span asp-validation-for="KasKutlesi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VucutKitleEndeksi" class="control-label"></label>
+                <input asp-for="VucutKitleEndeksi" class="form-control" />
+                <span asp-validation-for="VucutKitleEndeksi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KayitTarihi" class="control-label"></label>
+                <input asp-for="KayitTarihi" class="form-control" />
+                <span asp-validation-for="KayitTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

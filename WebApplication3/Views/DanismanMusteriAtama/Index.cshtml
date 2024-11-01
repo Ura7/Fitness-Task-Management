@@ -1,0 +1,22 @@
+﻿@model WebApplication3.Models.DanismanMusteriAtama
+
+
+<h2>Danışmanlara Müşterileri Atama</h2>
+
+@* Tasarımsal olarak düzenle *@
+
+<form asp-action="Atama" method="post">
+<label for="danismanID">Danışman</label>
+<select name="danismanID" asp-items="@(new SelectList(ViewBag.danisman,"Id","Firstname"))">
+	<option value="">Danışman Seç</option>
+</select>
+
+<label for="musteriID">Müşteri</label>
+<select name="musteriID" asp-items="@(new SelectList(ViewBag.musteri,"Id","Firstname"))">
+	<option value="">Müşteri Seç</option>
+</select>
+
+<button type="submit">Save</button>
+
+
+</form>

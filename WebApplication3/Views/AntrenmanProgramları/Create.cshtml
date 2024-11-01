@@ -1,0 +1,82 @@
+﻿@model WebApplication3.Models.AntrenmanProgramları
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>AntrenmanProgramları</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+                
+            </div>
+             
+
+            <div class="form-group">
+            <label for="MusteriID">Müşteri</label>
+            <select asp-for="MusteriID" asp-items="ViewBag.Musteriler">
+                <option value="">Müşteri Seç</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EgzersizAdı" class="control-label"></label>
+                <input asp-for="EgzersizAdı" class="form-control" />
+                <span asp-validation-for="EgzersizAdı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hedef" class="control-label"></label>
+                <select asp-for="Hedef" class="form-control">
+                    <option value="Kilo alma">Kilo alma</option>
+                    <option value="Kilo verme">Kilo verme</option>
+                    <option value="Kas kütlesi kazanma">Kas kütlesi kazanma</option>
+                    <option value="Kiloyu koruma">Kiloyu koruma</option>
+
+                    </select>
+                
+                
+                
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Setsayısı" class="control-label"></label>
+                <input asp-for="Setsayısı" class="form-control" />
+                <span asp-validation-for="Setsayısı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoURL" class="control-label"></label>
+                <input asp-for="VideoURL" type="url" class="form-control" />
+                <span asp-validation-for="VideoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Baslangic" class="control-label"></label>
+                <input asp-for="Baslangic" class="form-control" />
+                <span asp-validation-for="Baslangic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgramSüresi" class="control-label"></label>
+                <input asp-for="ProgramSüresi" class="form-control" />
+                <span asp-validation-for="ProgramSüresi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
